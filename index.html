@@ -177,7 +177,6 @@
           hiddenContent5.style.display = 'none';
           hiddenContent6.style.display = 'none';
           hiddenContent7.style.display = 'none';
-          sendLineNotifyO();
         }else if(siteInput === '2'){
           // パスワードが一致したら非表示のコンテンツを表示する
           document.getElementById('password-form').style.display = 'none';
@@ -188,7 +187,6 @@
           hiddenContent5.style.display = 'none';
           hiddenContent6.style.display = 'none';
           hiddenContent7.style.display = 'none';
-          sendLineNotifyO();
         }else if(siteInput === '3'){
           // パスワードが一致したら非表示のコンテンツを表示する
           document.getElementById('password-form').style.display = 'none';
@@ -199,7 +197,6 @@
           hiddenContent5.style.display = 'none';
           hiddenContent6.style.display = 'none';
           hiddenContent7.style.display = 'none';
-          sendLineNotifyO();
         }else if(siteInput === '4'){
           // パスワードが一致したら非表示のコンテンツを表示する
           document.getElementById('password-form').style.display = 'none';
@@ -210,7 +207,6 @@
           hiddenContent5.style.display = 'none';
           hiddenContent6.style.display = 'none';
           hiddenContent7.style.display = 'none';
-          sendLineNotifyO();
         }else if(siteInput === '5'){
           // パスワードが一致したら非表示のコンテンツを表示する
           document.getElementById('password-form').style.display = 'none';
@@ -221,7 +217,6 @@
           hiddenContent5.style.display = 'block';
           hiddenContent6.style.display = 'none';
           hiddenContent7.style.display = 'none';
-          sendLineNotifyO();
         }else if(siteInput === '6'){
           // パスワードが一致したら非表示のコンテンツを表示する
           document.getElementById('password-form').style.display = 'none';
@@ -232,7 +227,6 @@
           hiddenContent5.style.display = 'none';
           hiddenContent6.style.display = 'block';
           hiddenContent7.style.display = 'none';
-          sendLineNotifyO();
         }else if(siteInput === '7'){
           // パスワードが一致したら非表示のコンテンツを表示する
           document.getElementById('password-form').style.display = 'none';
@@ -243,10 +237,11 @@
           hiddenContent5.style.display = 'none';
           hiddenContent6.style.display = 'none';
           hiddenContent7.style.display = 'block';
-          sendLineNotifyO();
       } else {
         Erroraudio.play();
-      });
+      }
+      }}
+    });
 </script>
   <script>
     var passwordInput = document.getElementById('password-input').value;
