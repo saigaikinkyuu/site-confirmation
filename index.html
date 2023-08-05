@@ -272,27 +272,28 @@
          }
        }
      });
-　　　　　  var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://notify-api.line.me/api/notify');
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://notify-api.line.me/api/notify');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
 
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        console.log('通知が送信されました');
-      } else {
-        console.log('通知の送信に失敗しました');
-        console.log('ステータスコード: ' + xhr.status);
-      }
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      console.log('通知が送信されました');
+    } else {
+      console.log('通知の送信に失敗しました');
+      console.log('ステータスコード: ' + xhr.status);
     }
-  };
+  }
+};
 
-  var message = 'サイト確認のサイトにて不正アクセスを図られた可能性があります。';
-  var params = 'message=' + encodeURIComponent(message);
+var message = 'サイト確認のサイトにて不正アクセスを図られた可能性があります。';
+var params = 'message=' + encodeURIComponent(message);
 
-  xhr.send(params);
-      </script>
+xhr.send(params);
+</script>
+
 </body>
 </html>
