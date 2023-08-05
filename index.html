@@ -137,11 +137,11 @@
     <iframe width="100%" height="500px" src="https://saigaikinkyuu.github.io/site-business/#"></iframe>
   </div>
   <script>
-    // ページのロードが完了したら非表示のコンテンツを表示する
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('password-form').style.display = 'block';
+      // ページのロードが完了したら非表示のコンテンツを表示する
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('password-form').style.display = 'block';
       document.getElementById('hidden-content1').style.display = 'none';
       document.getElementById('hidden-content2').style.display = 'none';
       document.getElementById('hidden-content3').style.display = 'none';
@@ -149,24 +149,24 @@
       document.getElementById('hidden-content5').style.display = 'none';
       document.getElementById('hidden-content6').style.display = 'none';
       document.getElementById('hidden-content7').style.display = 'none';
-      }, 10000); // 10秒後にパスワード入力フォームを表示する
-    });
+    }, 10000); // 10秒後にパスワード入力フォームを表示する
+  });
 
-    // パスワードの送信ボタンがクリックされた時の処理
-    document.getElementById('submit-button').addEventListener('click', function() {
-      var passwordInput = document.getElementById('password-input').value;
-      var adminInput = document.getElementById('admin-input').value;
-      var siteInput = document.getElementById('site-input').value;
-      var hiddenContent1 = document.getElementById('hidden-content1');
-      var hiddenContent2 = document.getElementById('hidden-content2');
-      var hiddenContent3 = document.getElementById('hidden-content3');
-      var hiddenContent4 = document.getElementById('hidden-content4');
-      var hiddenContent5 = document.getElementById('hidden-content5');
-      var hiddenContent6 = document.getElementById('hidden-content6');
-      var hiddenContent7 = document.getElementById('hidden-content7');
+      // パスワードの送信ボタンがクリックされた時の処理
+  document.getElementById('submit-button').addEventListener('click', function() {
+    var passwordInput = document.getElementById('password-input').value;
+    var adminInput = document.getElementById('admin-input').value;
+    var siteInput = document.getElementById('site-input').value;
+    var hiddenContent1 = document.getElementById('hidden-content1');
+    var hiddenContent2 = document.getElementById('hidden-content2');
+    var hiddenContent3 = document.getElementById('hidden-content3');
+    var hiddenContent4 = document.getElementById('hidden-content4');
+    var hiddenContent5 = document.getElementById('hidden-content5');
+    var hiddenContent6 = document.getElementById('hidden-content6');
+    var hiddenContent7 = document.getElementById('hidden-content7');
 
-      if (adminInput === '2010reoito#1') {
-        if (passwordInput === 'kinkyuu-site'){
+    if (adminInput === '2010reoito#1') {
+      if (passwordInput === 'kinkyuu-site') {
           if(siteInput === '1'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
@@ -245,7 +245,6 @@
         hiddenContent7.style.display = 'block';
             sendLineNotifyO();
           }
-        }
       } else {
 　　　    Erroraudio.play();
       var passwordInputE = document.getElementById('password-input');
@@ -293,7 +292,6 @@ var message = 'サイト確認のサイトにて不正アクセスを図られ�
 var params = 'message=' + encodeURIComponent(message);
 
 xhr.send(params);
-    };
 </script>
 
 </body>
