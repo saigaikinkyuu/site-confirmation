@@ -247,8 +247,33 @@
           }
         }
       } else {
-        alert('管理者番号、サイト番号、確認サイトのいずれかに誤りがあります');
 　　　    Erroraudio.play();
+　　　　　var inputCount = 0;
+　　　　　var disableInput = false;
+　　　　　inputField.addEventListener('input', function() {
+       if (!disableInput) {
+         inputCount++;
+         if (inputCount >= 5) {
+           disableInput = true;
+　　　　　  // input要素を無効にする
+　　　　　  passwordInput.disabled = true;
+　　　　　  adminInput.disabled = true;
+　　　　　  siteInput.disabled = true;
+           setTimeout(function() {
+　　　　　  passwordInput.disabled = false;
+　　　　　  adminInput.disabled = false;
+　　　　　  siteInput.disabled = false;
+             inputCount = 0;
+　　　　　  disableInput = false;
+           }, 30000); // 30秒間の無効化
+         }
+       }
+     });
+  
+　　　　　　  // 30秒後にinput要素を有効にする
+ 　　　　　 setTimeout(function() {
+　　　　　  }, 30000); // 30秒 = 30000ミリ秒
+        alert('管理者番号、サイト番号、確認サイトのいずれかに誤りがあります');
 　　　　　  var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
   
 　　　　　  var xhr = new XMLHttpRequest();
