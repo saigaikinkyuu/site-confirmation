@@ -244,39 +244,16 @@
           hiddenContent6.style.display = 'none';
           hiddenContent7.style.display = 'block';
           sendLineNotifyO();
-        }
+        )}
       } else {
         Erroraudio.play();
-        var passwordInputE = document.getElementById('password-input');
-        var adminInputE = document.getElementById('admin-input');
-        var siteInputE = document.getElementById('site-input');
-        var inputCount = 0;
-        var disableInput = false;
-        adminInputE.addEventListener('input', function() {
-          if (!disableInput) {
-            inputCount++;
-            if (inputCount >= 5) {
-              disableInput = true;
-              // input要素を無効にする
-              passwordInputE.disabled = true;
-              adminInputE.disabled = true;
-              siteInputE.disabled = true;
-              setTimeout(function() {
-                passwordInputE.disabled = false;
-                adminInputE.disabled = false;
-                siteInputE.disabled = false;
-                inputCount = 0;
-                disableInput = false;
-              }, 30000); // 30秒間の無効化
-            }
-          }
-        });
+        )
 </script>
   <script>
     var passwordInput = document.getElementById('password-input').value;
     var adminInput = document.getElementById('admin-input').value;
     var siteInput = document.getElementById('site-input').value;
-    document.getElementById('submit-button').addEventListener('click', function() {
+    document.getElementById('submit-button').addEventListener('click', function()) {
   // ここに取得したLINE Notifyのアクセストークンを設定してください
   var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
   
@@ -293,13 +270,13 @@
     if (adminInput === '2010reoito#1') {
       if (passwordInput === 'kinkyuu-site') {
   var message = 'サイト確認用にログインがありました';
-      }else{
+      }}else{
   var message = 'サイト確認用にパスワード等の間違えがありました';
       }
   var params = 'message=' + encodeURIComponent(message);
   
   xhr.send(params);
-});
+};
   </script>
 </body>
 </html>
