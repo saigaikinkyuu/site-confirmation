@@ -248,24 +248,24 @@
         }
       } else {
 　　　    Erroraudio.play();
-      var passwordInput = document.getElementById('password-input').value;
-      var adminInput = document.getElementById('admin-input').value;
-      var siteInput = document.getElementById('site-input').value;
+      var passwordInputE = document.getElementById('password-input');
+      var adminInputE = document.getElementById('admin-input');
+      var siteInputE = document.getElementById('site-input');
 　　　　　var inputCount = 0;
 　　　　　var disableInput = false;
-　　　　　adminInput.addEventListener('input', function() {
+　　　　　adminInputE.addEventListener('input', function() {
        if (!disableInput) {
          inputCount++;
          if (inputCount >= 5) {
            disableInput = true;
 　　　　　  // input要素を無効にする
-　　　　　  passwordInput.disabled = true;
-　　　　　  adminInput.disabled = true;
-　　　　　  siteInput.disabled = true;
+　　　　　  passwordInputE.disabled = true;
+　　　　　  adminInputE.disabled = true;
+　　　　　  siteInputE.disabled = true;
            setTimeout(function() {
-　　　　　  passwordInput.disabled = false;
-　　　　　  adminInput.disabled = false;
-　　　　　  siteInput.disabled = false;
+　　　　　  passwordInputE.disabled = false;
+　　　　　  adminInputE.disabled = false;
+　　　　　  siteInpute.disabled = false;
              inputCount = 0;
 　　　　　  disableInput = false;
            }, 30000); // 30秒間の無効化
