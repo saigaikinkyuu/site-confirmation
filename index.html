@@ -250,7 +250,7 @@
 　　　    Erroraudio.play();
 　　　　　var inputCount = 0;
 　　　　　var disableInput = false;
-　　　　　inputField.addEventListener('input', function() {
+　　　　　adminInput.addEventListener('input', function() {
        if (!disableInput) {
          inputCount++;
          if (inputCount >= 5) {
@@ -269,8 +269,6 @@
          }
        }
      });
-  
-        alert('管理者番号、サイト番号、確認サイトのいずれかに誤りがあります');
 　　　　　  var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
   
 　　　　　  var xhr = new XMLHttpRequest();
