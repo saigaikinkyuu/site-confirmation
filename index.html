@@ -3,10 +3,6 @@
 <head>
   <title>サイト確認</title>
   <style>
-    html{
-        background-color: black;
-    }
-
     .square-container {
       display: flex;
       margin-top: 10px;
@@ -143,6 +139,13 @@
       setTimeout(function() {
         document.getElementById('loader').style.display = 'none';
         document.getElementById('password-form').style.display = 'block';
+      document.getElementById('hidden-content1').style.display = 'none';
+      document.getElementById('hidden-content2').style.display = 'none';
+      document.getElementById('hidden-content3').style.display = 'none';
+      document.getElementById('hidden-content4').style.display = 'none';
+      document.getElementById('hidden-content5').style.display = 'none';
+      document.getElementById('hidden-content6').style.display = 'none';
+      document.getElementById('hidden-content7').style.display = 'none';
       }, 10000); // 10秒後にパスワード入力フォームを表示する
     });
 
@@ -165,29 +168,71 @@
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
         hiddenContent1.style.display = 'block';
+        hiddenContent2.style.display = 'none';
+        hiddenContent3.style.display = 'none';
+        hiddenContent4.style.display = 'none';
+        hiddenContent5.style.display = 'none';
+        hiddenContent6.style.display = 'none';
+        hiddenContent7.style.display = 'none';
           }else if(siteInput === '2'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
+        hiddenContent1.style.display = 'none';
         hiddenContent2.style.display = 'block';
+        hiddenContent3.style.display = 'none';
+        hiddenContent4.style.display = 'none';
+        hiddenContent5.style.display = 'none';
+        hiddenContent6.style.display = 'none';
+        hiddenContent7.style.display = 'none';
           }else if(siteInput === '3'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
+        hiddenContent1.style.display = 'none';
+        hiddenContent2.style.display = 'none';
         hiddenContent3.style.display = 'block';
+        hiddenContent4.style.display = 'none';
+        hiddenContent5.style.display = 'none';
+        hiddenContent6.style.display = 'none';
+        hiddenContent7.style.display = 'none';
           }else if(siteInput === '4'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
+        hiddenContent1.style.display = 'none';
+        hiddenContent2.style.display = 'none';
+        hiddenContent3.style.display = 'none';
         hiddenContent4.style.display = 'block';
+        hiddenContent5.style.display = 'none';
+        hiddenContent6.style.display = 'none';
+        hiddenContent7.style.display = 'none';
           }else if(siteInput === '5'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
+        hiddenContent1.style.display = 'none';
+        hiddenContent2.style.display = 'none';
+        hiddenContent3.style.display = 'none';
+        hiddenContent4.style.display = 'none';
         hiddenContent5.style.display = 'block';
+        hiddenContent6.style.display = 'none';
+        hiddenContent7.style.display = 'none';
           }else if(siteInput === '6'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
+        hiddenContent1.style.display = 'none';
+        hiddenContent2.style.display = 'none';
+        hiddenContent3.style.display = 'none';
+        hiddenContent4.style.display = 'none';
+        hiddenContent5.style.display = 'none';
         hiddenContent6.style.display = 'block';
+        hiddenContent7.style.display = 'none';
           }else if(siteInput === '7'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
+        hiddenContent1.style.display = 'none';
+        hiddenContent2.style.display = 'none';
+        hiddenContent3.style.display = 'none';
+        hiddenContent4.style.display = 'none';
+        hiddenContent5.style.display = 'none';
+        hiddenContent6.style.display = 'none';
         hiddenContent7.style.display = 'block';
           }
         }
