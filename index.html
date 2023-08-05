@@ -3,6 +3,9 @@
 <head>
   <title>サイト確認</title>
   <style>
+    #back-black{
+      background-color: black;
+    }
     .square-container {
       display: flex;
       margin-top: 10px;
@@ -95,7 +98,7 @@
   </div>
 
   <!-- パスワード入力フォーム -->
-  <div id="password-form">
+  <div id="password-form back-black">
     <h2 style="color: white;">管理者用サイト番号を入力してください。</h2>
     <input type="password" id="admin-input" placeholder="管理者番号">
     <input type="password" id="password-input" placeholder="サイト番号">
@@ -105,6 +108,7 @@
   </div>
 
   <!-- 非表示のコンテンツ -->
+  <div id="back-black">
   <div id="hidden-content1">
     <h2>サイトのHOMEを表示しています</h2>
     <iframe width="100%" height="500px" src="https://saigaikinkyuu.github.io/site-homepage/#"></iframe>
@@ -241,5 +245,6 @@
       }
     });
   </script>
+  </div>
 </body>
 </html>
