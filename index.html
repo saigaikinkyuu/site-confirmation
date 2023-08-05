@@ -89,6 +89,9 @@
   </style>
 </head>
 <body>
+<audio id="Erroraudio" controls style="display:none">
+  <source src="Erroraudio.mp3" type="audio/mpeg">
+</audio>
   <!-- ロード画面 -->
   <div id="loader">
     <h2>サイトの確認ー管理者専用です</h2>
@@ -174,6 +177,7 @@
         hiddenContent5.style.display = 'none';
         hiddenContent6.style.display = 'none';
         hiddenContent7.style.display = 'none';
+            sendLineNotifyO();
           }else if(siteInput === '2'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
@@ -184,6 +188,7 @@
         hiddenContent5.style.display = 'none';
         hiddenContent6.style.display = 'none';
         hiddenContent7.style.display = 'none';
+            sendLineNotifyO();
           }else if(siteInput === '3'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
@@ -194,6 +199,7 @@
         hiddenContent5.style.display = 'none';
         hiddenContent6.style.display = 'none';
         hiddenContent7.style.display = 'none';
+            sendLineNotifyO();
           }else if(siteInput === '4'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
@@ -204,6 +210,7 @@
         hiddenContent5.style.display = 'none';
         hiddenContent6.style.display = 'none';
         hiddenContent7.style.display = 'none';
+            sendLineNotifyO();
           }else if(siteInput === '5'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
@@ -214,6 +221,7 @@
         hiddenContent5.style.display = 'block';
         hiddenContent6.style.display = 'none';
         hiddenContent7.style.display = 'none';
+            sendLineNotifyO();
           }else if(siteInput === '6'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
@@ -224,6 +232,7 @@
         hiddenContent5.style.display = 'none';
         hiddenContent6.style.display = 'block';
         hiddenContent7.style.display = 'none';
+            sendLineNotifyO();
           }else if(siteInput === '7'){
         // パスワードが一致したら非表示のコンテンツを表示する
         document.getElementById('password-form').style.display = 'none';
@@ -234,11 +243,33 @@
         hiddenContent5.style.display = 'none';
         hiddenContent6.style.display = 'none';
         hiddenContent7.style.display = 'block';
+            sendLineNotifyO();
           }
         }
       } else {
         alert('管理者番号、サイト番号、確認サイトのいずれかに誤りがあります');
+　　　    Erroraudio.play();
+    　　　function sendLineNotify() {
+    　　  var accessToken = "Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y"; // 取得したアクセストークンを入力
+　　      var message = "サイトの確認ページ内で不正アクセスを図った可能性があります。"; // 送りたいメッセージを入力
+
+  　　    var xhr = new XMLHttpRequest();
+  　　    xhr.open("POST", "https://notify-api.line.me/api/notify");
+　　      xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+　　      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+　　      xhr.send("message=" + encodeURIComponent(message));
+    }
       }
+      function sendLineNotifyO() {
+    　　  var accessToken = "Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y"; // 取得したアクセストークンを入力
+　　      var message = "サイトの確認ページ内でログインが確認されました。"; // 送りたいメッセージを入力
+
+  　　    var xhr = new XMLHttpRequest();
+  　　    xhr.open("POST", "https://notify-api.line.me/api/notify");
+　　      xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+　　      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+　　      xhr.send("message=" + encodeURIComponent(message));
+    }
     });
   </script>
 </body>
