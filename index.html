@@ -249,28 +249,24 @@
       } else {
         alert('管理者番号、サイト番号、確認サイトのいずれかに誤りがあります');
 　　　    Erroraudio.play();
-            sendLineNotify();
+　　　　　  var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
+  
+　　　　　  var xhr = new XMLHttpRequest();
+　　　　　  xhr.open('POST', 'https://notify-api.line.me/api/notify');
+　　　　　  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  　　　　　xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+  
+ 　　　　　 xhr.onreadystatechange = function() {
+　　　　　    if (xhr.readyState === 4 && xhr.status === 200) {
+ 　　　　　     console.log('通知が送信されました');
+ 　　　　　   }
+　　　　　  };
+  
+　　　　　  var message = 'サイト確認のサイトにて不正アクセスを図られた可能性があります。';
+　　　　　  var params = 'message=' + encodeURIComponent(message);
+  
+　　　　　  xhr.send(params);
       }
-      function sendLineNotifyO() {
-    　　  var accessToken = "Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y"; // 取得したアクセストークンを入力
-　　      var message = "サイトの確認ページ内でログインが確認されました。"; // 送りたいメッセージを入力
-
-  　　    var xhr = new XMLHttpRequest();
-  　　    xhr.open("POST", "https://notify-api.line.me/api/notify");
-　　      xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-　　      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-　　      xhr.send("message=" + encodeURIComponent(message));
-    }
-    　　　function sendLineNotify() {
-    　　  var accessToken = "Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y"; // 取得したアクセストークンを入力
-　　      var message = "サイトの確認ページ内で不正アクセスを図った可能性があります。"; // 送りたいメッセージを入力
-
-  　　    var xhr = new XMLHttpRequest();
-  　　    xhr.open("POST", "https://notify-api.line.me/api/notify");
-　　      xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-　　      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-　　      xhr.send("message=" + encodeURIComponent(message));
-    }
     });
   </script>
 </body>
