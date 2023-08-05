@@ -244,13 +244,12 @@
 </script>
   <script>
   document.getElementById('submit-button').addEventListener('click', function() {
-    // ここに取得したLINE Notifyのアクセストークンを設定してください
-    var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
+    // サーバーサイドのURLを設定
+    var serverUrl = 'https://your-server-domain.com/send-notification';
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://notify-api.line.me/api/notify');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+    xhr.open('POST', serverUrl);
+    xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
@@ -258,10 +257,12 @@
       }
     };
 
-    var message = 'サイト確認の認証が行われたもしくは、行われようとしました。';
-    var params = 'message=' + encodeURIComponent(message);
+    var data = {
+      accessToken: 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y',
+      message: 'サイト確認の通知メッセージ'
+    };
 
-    xhr.send(params);
+    xhr.send(JSON.stringify(data));
   });
 </script>
 </body>
