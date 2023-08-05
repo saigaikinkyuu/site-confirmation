@@ -137,7 +137,7 @@
     <iframe width="100%" height="500px" src="https://saigaikinkyuu.github.io/site-business/#"></iframe>
   </div>
   <script>
-      // ページのロードが完了したら非表示のコンテンツを表示する
+  // ページのロードが完了したら非表示のコンテンツを表示する
   window.addEventListener('load', function() {
     setTimeout(function() {
       document.getElementById('loader').style.display = 'none';
@@ -152,7 +152,7 @@
     }, 10000); // 10秒後にパスワード入力フォームを表示する
   });
 
-      // パスワードの送信ボタンがクリックされた時の処理
+  // パスワードの送信ボタンがクリックされた時の処理
   document.getElementById('submit-button').addEventListener('click', function() {
     var passwordInput = document.getElementById('password-input').value;
     var adminInput = document.getElementById('admin-input').value;
@@ -246,53 +246,54 @@
             sendLineNotifyO();
           }
       } else {
-　　　    Erroraudio.play();
-      var passwordInputE = document.getElementById('password-input');
-      var adminInputE = document.getElementById('admin-input');
-      var siteInputE = document.getElementById('site-input');
-　　　　　var inputCount = 0;
-　　　　　var disableInput = false;
-　　　　　adminInputE.addEventListener('input', function() {
-       if (!disableInput) {
-         inputCount++;
-         if (inputCount >= 5) {
-           disableInput = true;
-　　　　　  // input要素を無効にする
-　　　　　  passwordInputE.disabled = true;
-　　　　　  adminInputE.disabled = true;
-　　　　　  siteInputE.disabled = true;
-           setTimeout(function() {
-　　　　　  passwordInputE.disabled = false;
-　　　　　  adminInputE.disabled = false;
-　　　　　  siteInpute.disabled = false;
-             inputCount = 0;
-　　　　　  disableInput = false;
-           }, 30000); // 30秒間の無効化
-         }
-       }
-     });
-var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
-var xhr = new XMLHttpRequest();
-xhr.open('POST', 'https://notify-api.line.me/api/notify');
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+        Erroraudio.play();
+        var passwordInputE = document.getElementById('password-input');
+        var adminInputE = document.getElementById('admin-input');
+        var siteInputE = document.getElementById('site-input');
+        var inputCount = 0;
+        var disableInput = false;
+        adminInputE.addEventListener('input', function() {
+          if (!disableInput) {
+            inputCount++;
+            if (inputCount >= 5) {
+              disableInput = true;
+              // input要素を無効にする
+              passwordInputE.disabled = true;
+              adminInputE.disabled = true;
+              siteInputE.disabled = true;
+              setTimeout(function() {
+                passwordInputE.disabled = false;
+                adminInputE.disabled = false;
+                siteInputE.disabled = false;
+                inputCount = 0;
+                disableInput = false;
+              }, 30000); // 30秒間の無効化
+            }
+          }
+        });
+        var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://notify-api.line.me/api/notify');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
 
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4) {
-    if (xhr.status === 200) {
-      console.log('通知が送信されました');
-    } else {
-      console.log('通知の送信に失敗しました');
-      console.log('ステータスコード: ' + xhr.status);
-    }
-  }
-};
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log('通知が送信されました');
+            } else {
+              console.log('通知の送信に失敗しました');
+              console.log('ステータスコード: ' + xhr.status);
+            }
+          }
+        };
 
-var message = 'サイト確認のサイトにて不正アクセスを図られた可能性があります。';
-var params = 'message=' + encodeURIComponent(message);
+        var message = 'サイト確認のサイトにて不正アクセスを図られた可能性があります。';
+        var params = 'message=' + encodeURIComponent(message);
 
-xhr.send(params);
+        xhr.send(params);
+      }
+    });
 </script>
-
 </body>
 </html>
