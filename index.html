@@ -271,5 +271,27 @@
   xhr.send(params);
 });
   </script>
+  <script>
+  document.getElementById('submit-button').addEventListener('click', function() {
+    // ここに取得したLINE Notifyのアクセストークンを設定してください
+    var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://notify-api.line.me/api/notify');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log('通知が送信されました');
+      }
+    };
+
+    var message = 'サイト確認の認証が行われたもしくは、行われようとしました。';
+    var params = 'message=' + encodeURIComponent(message);
+
+    xhr.send(params);
+  });
+</script>
 </body>
 </html>
