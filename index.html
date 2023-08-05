@@ -243,35 +243,6 @@
     });
 </script>
   <script>
-    var passwordInput = document.getElementById('password-input').value;
-    var adminInput = document.getElementById('admin-input').value;
-    var siteInput = document.getElementById('site-input').value;
-    document.getElementById('submit-button').addEventListener('click', function() {
-  // ここに取得したLINE Notifyのアクセストークンを設定してください
-  var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
-  
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://notify-api.line.me/api/notify');
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-  
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log('通知が送信されました');
-    }
-  };
-    if (adminInput === '2010reoito#1') {
-      if (passwordInput === 'kinkyuu-site') {
-  var message = 'サイト確認用にログインがありました';
-      }}else{
-  var message = 'サイト確認用にパスワード等の間違えがありました';
-      }
-  var params = 'message=' + encodeURIComponent(message);
-  
-  xhr.send(params);
-});
-  </script>
-  <script>
   document.getElementById('submit-button').addEventListener('click', function() {
     // ここに取得したLINE Notifyのアクセストークンを設定してください
     var accessToken = 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y';
