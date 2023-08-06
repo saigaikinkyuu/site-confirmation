@@ -263,9 +263,33 @@
     });
 </script>
   <script>
-  document.getElementById('submit-button').addEventListener('click', function() {
-    
-  });
+    // 通知を送信するための関数
+function sendLineNotify(message) {
+  var accessToken = '3ZRrctQsrh6C6CWVvwMp1x8zYe5hDDHi2hmuKlWCAf2'; // ここに取得したアクセストークンを入力してください
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://notify-api.line.me/api/notify');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log('通知が送信されました');
+      } else {
+        console.log('通知の送信に失敗しました');
+        console.log('ステータスコード: ' + xhr.status);
+      }
+    }
+  };
+
+  var params = 'message=' + encodeURIComponent(message);
+  xhr.send(params);
+}
+
+// 通知を送信する例
+sendLineNotify('これはテスト通知です。');
+
 </script>
 </body>
 </html>
