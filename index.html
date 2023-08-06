@@ -154,6 +154,26 @@
 
   // パスワードの送信ボタンがクリックされた時の処理
   document.getElementById('submit-button').addEventListener('click', function() {
+    // サーバーサイドのURLを設定
+    var serverUrl = 'https://your-server-domain.com/send-notification';
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', serverUrl);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log('通知が送信されました');
+      }
+    };
+
+    var data = {
+      accessToken: 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y',
+      message: 'サイト確認の通知メッセージ'
+    };
+
+    xhr.send(JSON.stringify(data));
+    // ↑ここまでがLINE Token
     var passwordInput = document.getElementById('password-input').value;
     var adminInput = document.getElementById('admin-input').value;
     var siteInput = document.getElementById('site-input').value;
@@ -244,25 +264,7 @@
 </script>
   <script>
   document.getElementById('submit-button').addEventListener('click', function() {
-    // サーバーサイドのURLを設定
-    var serverUrl = 'https://your-server-domain.com/send-notification';
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', serverUrl);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        console.log('通知が送信されました');
-      }
-    };
-
-    var data = {
-      accessToken: 'Qc5KfpK3qSGvd2609ZU8RJuIQSqfBKtPHANGSVCry2Y',
-      message: 'サイト確認の通知メッセージ'
-    };
-
-    xhr.send(JSON.stringify(data));
+    
   });
 </script>
 </body>
